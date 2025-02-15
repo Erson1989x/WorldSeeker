@@ -1,12 +1,9 @@
-import Spinner from "./Spinner";
+import Spinner from "./Spinner/Spinner";
 import styles from "./CountryList.module.css";
 import CountryItem from "./CountryItem";
-import Message from "./Message";
-import { useCities } from "../contexts/CitiesContext";
+import Message from "./Message/Message";
 
-function CountryList() {
-  const { cities, isLoading } = useCities();
-
+const CountryList = ({ cities, isLoading }) => {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -27,6 +24,6 @@ function CountryList() {
       ))}
     </ul>
   );
-}
+};
 
 export default CountryList;
