@@ -9,6 +9,7 @@ import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 import { useState, useEffect } from "react";
 import CountryList from "./components/CountryList";
+import City from "./components/City/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -22,7 +23,7 @@ const App = () => {
         setLoading(true);
         const res = await fetch(`${BASE_URL}/cities`);
         // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         const data = await res.json();
         setCities(data);
       } catch (error) {
@@ -35,21 +36,29 @@ const App = () => {
     fetchCities();
   }, []);
 
-
   return (
-    
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />} >
-          <Route index element={<CityList cities={cities} isLoading={loading} />} />
-          <Route path="cities" element={<CityList cities={cities} isLoading={loading} />} />
-          <Route path="countries" element={<CountryList cities={cities} isLoading={loading} />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route
+            index
+            element={<CityList cities={cities} isLoading={loading} />}
+          />
+          <Route
+            path="cities"
+            element={<CityList cities={cities} isLoading={loading} />}
+          />
+          <Route path="cities/:id" element={<City />} />
+          <Route
+            path="countries"
+            element={<CountryList cities={cities} isLoading={loading} />}
+          />
           <Route path="form" element={<p>Form</p>} />
-         </Route>
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
