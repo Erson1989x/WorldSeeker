@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useCities } from "../../context/CitiesContext";
+import BackButton from "../Button/BackButton";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
