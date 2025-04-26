@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const BackButton = () => {
     const navigate = useNavigate();
   return (
-    <Button
+    <button
+    className="btn btn--back"
     tyoe="back"
     onClick={(e) => {
       e.preventDefault();
@@ -12,7 +13,7 @@ const BackButton = () => {
     }}
   >
     &larr; Back
-  </Button>
+  </button>
   )
 }
 
