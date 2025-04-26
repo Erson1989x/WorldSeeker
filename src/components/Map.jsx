@@ -38,16 +38,18 @@ const Map = () => {
     if (geolocationPosition) {
       setMapPosition([
         geolocationPosition.coords.latitude,
-        geolocation.coords.longitude,
+        geolocationPosition.coords.longitude,
       ]);
     }
   }, [geolocationPosition]);
 
   return (
     <div className={styles.mapContainer}>
-      <Button type="position" onClick={getPosition}>
-        {isLoadingPosition ? "Loading..." : "Get your position"}
-      </Button>
+      {!geolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Get your position"}
+        </Button>
+      )}
       <MapContainer
         center={mapPosition}
         //center={[mapLat, mapLng]}
