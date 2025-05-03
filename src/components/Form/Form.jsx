@@ -66,8 +66,10 @@ function Form() {
       cityName,
       date: date.toLocaleDateString("en-GB"),
       notes,
-      lat,
-      lng,
+      position : {
+        lat,
+        lng
+      },
       country,
       emoji
     };

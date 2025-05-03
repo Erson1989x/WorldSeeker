@@ -16,7 +16,10 @@ function CityItem({ city }) {
     <li>
       <Link
         className={`${styles.cityItem} ${id=== currentCity.id ? styles["cityItem--active"] : ""}`}
-        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+        to={position && position.lat && position.lng 
+          ? `${id}?lat=${position.lat}&lng=${position.lng}` 
+          : `${id}`
+        }
       >
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
