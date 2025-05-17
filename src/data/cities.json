@@ -35,6 +35,18 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
+    },
+    {
+      "id": "e916",
+      "cityName": "London",
+      "date": "17/05/2025",
+      "notes": "",
+      "position": {
+        "lat": "51.51002453540032",
+        "lng": "-0.09630203247070312"
+      },
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧"
     }
   ]
 }
