@@ -69,6 +69,18 @@
       },
       "country": "Austria",
       "emoji": "🇦🇹"
+    },
+    {
+      "id": "5d4c",
+      "cityName": "Topliţa",
+      "date": "17/05/2025",
+      "notes": "loading",
+      "position": {
+        "lat": "47.20650833393468",
+        "lng": "25.191650390625004"
+      },
+      "country": "Romania",
+      "emoji": "🇷🇴"
     }
   ]
 }

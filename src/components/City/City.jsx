@@ -5,13 +5,19 @@ import { useCities } from "../../context/CitiesContext";
 import BackButton from "../Button/BackButton";
 
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+const formatDate = (date) => {
+  if (!date) return "";
+  try {
+    return new Intl.DateTimeFormat("en", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      weekday: "long",
+    }).format(new Date(date));
+  } catch (error) {
+    return "Invalid date";
+  }
+};
 
 function City() {
   const { id } = useParams();
@@ -34,9 +40,8 @@ function City() {
         </h3>
       </div>
 
-      <div className={styles.row}>
-        <h6>You went to {cityName} on</h6>
-        <p>{formatDate(date || null)}</p>
+      <div className={styles.row}>        <h6>You went to {cityName} on</h6>
+        <p>{formatDate(date)}</p>
       </div>
 
       {notes && (

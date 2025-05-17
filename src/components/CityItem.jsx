@@ -2,12 +2,19 @@ import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
 import { useCities } from "../context/CitiesContext";
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date));
+const formatDate = (date) => {
+  if (!date) return "";
+  try {
+    return new Intl.DateTimeFormat("en", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      weekday: "long",
+    }).format(new Date(date));
+  } catch (error) {
+    return "Invalid date";
+  }
+};
 
 function CityItem({ city }) {
   const { currentCity } = useCities();
