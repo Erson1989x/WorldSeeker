@@ -35,52 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
-    },
-    {
-      "id": "a4fc",
-      "cityName": "Balatonalmadi",
-      "date": "03/05/2025",
-      "notes": "",
-      "lat": "47.05655748948795",
-      "lng": "17.99921035766602",
-      "country": "Hungary",
-      "emoji": "🇭🇺"
-    },
-    {
-      "id": "6dbc",
-      "cityName": "Balatonalmadi",
-      "date": "03/05/2025",
-      "notes": "",
-      "position": {
-        "lat": "47.05772696459434",
-        "lng": "17.99440383911133"
-      },
-      "country": "Hungary",
-      "emoji": "🇭🇺"
-    },
-    {
-      "id": "7aad",
-      "cityName": "Malta",
-      "date": "03/05/2025",
-      "notes": "",
-      "position": {
-        "lat": "47.09505867817746",
-        "lng": "13.347168266773226"
-      },
-      "country": "Austria",
-      "emoji": "🇦🇹"
-    },
-    {
-      "id": "5d4c",
-      "cityName": "Topliţa",
-      "date": "17/05/2025",
-      "notes": "loading",
-      "position": {
-        "lat": "47.20650833393468",
-        "lng": "25.191650390625004"
-      },
-      "country": "Romania",
-      "emoji": "🇷🇴"
     }
   ]
 }
