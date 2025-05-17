@@ -59,7 +59,7 @@ const reducer = (state, action) => {
 }
 
 const CitiesProvider = ({ children }) => {
-  const [{cities, loading, currentCity}, dispatch] = useReducer(reducer, initialState);
+  const [{cities, loading, currentCity, error}, dispatch] = useReducer(reducer, initialState);
    // const [cities, setCities] = useState([]);
    // const [loading, setLoading] = useState(false);
    //  const [currentCity, setCurrentCity] = useState({});
@@ -82,6 +82,8 @@ const CitiesProvider = ({ children }) => {
     }, []);
 
     const getCity = async (id) => {
+      if(Number(id) === currentCity.id) return;
+
       dispatch({ type: "loading" });
         try {
           const res = await fetch(`${BASE_URL}/cities/${id}`);
@@ -126,7 +128,7 @@ const CitiesProvider = ({ children }) => {
   }
 
     return (
-        <CitiesContext.Provider value={{ cities, loading, currentCity, getCity,createCity, deleteCity }}>
+        <CitiesContext.Provider value={{ cities, loading, currentCity, getCity,createCity, deleteCity, error }}>
             {children}
         </CitiesContext.Provider>
     );
