@@ -12,6 +12,7 @@ import Spinner from "../Spinner/Spinner";
 import DatePicker from "react-datepicker";
 import { useCities } from "../../context/CitiesContext";
 export function convertToEmoji(countryCode) {
+  if (!countryCode) return "";
   const codePoints = countryCode
     .toUpperCase()
     .split("")

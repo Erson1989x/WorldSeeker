@@ -33,6 +33,11 @@ body {
   line-height: 1.6;
 }
 
+/* Ensure emoji display correctly across browsers */
+.emoji, [class*="emoji"], [class*="flag"] {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
 label {
   font-size: 1.6rem;
   font-weight: 600;

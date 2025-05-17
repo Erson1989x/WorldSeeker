@@ -32,11 +32,10 @@ function City() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className={styles.city}>
-      <div className={styles.row}>
+    <div className={styles.city}>      <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <span className={styles.emoji}>{emoji}</span> {cityName}
         </h3>
       </div>
 

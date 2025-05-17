@@ -38,12 +38,14 @@ const reducer = (state, action) => {
           ...state,
           cities: [...state.cities, action.payload],
           loading: false,
+          currentCity: action.payload,
         };
       case "cities/deleted":
         return {
           ...state,
           cities: state.cities.filter((city) => city.id !== action.payload),
           loading: false,
+          currentCity: {},
         };
       case "rejected":
         return {
